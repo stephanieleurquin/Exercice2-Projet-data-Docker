@@ -1,0 +1,14 @@
+# Utilise Python 3.11 slim comme base
+FROM python:3.11-slim
+
+# Installer pandas
+RUN pip install pandas
+
+# Copier le script Python dans le conteneur
+COPY exercice2.py /app/
+
+# Définir le dossier de travail
+WORKDIR /app
+
+# Commande par défaut quand on lance le conteneur
+CMD ["python", "exercice2.py"]
